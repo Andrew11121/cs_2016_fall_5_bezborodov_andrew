@@ -1,1 +1,151 @@
+\documentclass[a4paper]{article}
 
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Your Paper}
+\author{You}
+
+\begin{document}
+2
+Easy cases
+2.1 Gaussian integral revisited 13
+2.2 Plane geometry: The area of an ellipse 16
+2.3 Solid geometry: The volume of a truncated pyramid 17
+2.4 Fluid mechanics: Drag 21
+2.5 Summary and further problems 29
+A correct solution works in all cases, including the easy ones. This maxim
+underlies the second tool—the method of easy cases. It will help us guess
+integrals, deduce volumes, and solve exacting differential equations.
+2.1 Gaussian integral revisited
+As the first application, let’s revisit the Gaussian integral from Section 1.3,
+∞
+−∞
+dx. (2.1)
+The correct choice must work for all a  0. At this range’s endpoints
+(a = ∞ and a = 0), the integral is easy to evaluate.
+What is the integral when a = ∞?
+e−10x2
+0 1
+As the first easy case, increase a to ∞. Then −ax2 becomes
+very negative, even when x is tiny. The exponential
+of a large negative number is tiny, so the bell curve
+narrows to a sliver, and its area shrinks to zero. Therefore,
+as a → ∞ the integral shrinks to zero. This result refutes the option
+14 2 Easy cases
+which is zero when a = ∞.
+What is the integral when a = 0?
+e−x2/10
+0 1
+In the a = 0 extreme, the bell curve flattens into a
+horizontal line with unit height. Its area, integrated
+over the infinite range, is infinite. This result refutes
+the a option, which is zero when a = 0; and it
+passes both easy-cases tests.
+If these two options were the only options, we would choose a. However,
+if a third option were
+
+2/a, how could you decide between it and
+a ? Both options pass both easy-cases tests; they also have identical
+dimensions. The choice looks difficult.
+To choose, try a third easy case: a = 1. Then the integral simplifies to
+∞
+−∞
+e−x2
+dx. (2.2)
+This classic integral can be evaluated in closed form by using polar coordinates,
+but that method also requires a trick with few other applications
+(textbooks on multivariable calculus give the gory details). A less elegant
+but more general approach is to evaluate the integral numerically and to
+use the approximate value to guess the closed form.
+Therefore, replace the smooth curve e−x2
+with a curve
+having n line segments. This piecewise-linear approximation
+turns the area into a sum of n trapezoids. As
+n approaches infinity, the area of the trapezoids more and more closely
+approaches the area under the smooth curve.
+n Area
+10 2.07326300569564
+20 1.77263720482665
+30 1.77245385170978
+40 1.77245385090552
+50 1.77245385090552
+The table gives the area under the curve in the
+range x = −10 . . . 10, after dividing the curve
+into n line segments. The areas settle onto a
+stable value, and it looks familiar. It begins
+with 1.7, which might arise from 
+3. However,
+it continues as 1.77, which is too large to be 
+3.
+Fortunately,  is slightly larger than 3, so the
+area might be converging to .
+2.1 Gaussian integral revisited 15
+Let’s check by comparing the squared area against:
+1.772453850905522 ≈ 3.14159265358980,
+pi ≈ 3.14159265358979. (2.3)
+The close match suggests that the a = 1 Gaussian integral is indeed :
+
+Easy cases are not the only way to judge these choices. Dimensional analysis,
+for example, can also restrict the possibilities (Section 1.3). It even
+eliminates choices like √pi/a that pass all three easy-cases tests. However,
+easy cases are, by design, simple. They do not require us to invent or
+deduce dimensions for x, a, and dx (the extensive analysis of Section 1.3).
+Easy cases, unlike dimensional analysis, can also eliminate choices like
+2/a with correct dimensions. Each tool has its strengths.
+Problem 2.1 Testing several alternatives
+For the Gaussian integral
+
+use the three easy-cases tests to evaluate the following candidates for its value.
+(a) √pi/a (b) 1 + (√pi − 1)/a (c) 1/a2 + (√pi − 1)/a.
+Problem 2.2 Plausible, incorrect alternative
+Is there an alternative to pi/a that has valid dimensions and passes the three
+easy-cases tests?
+16 2 Easy cases
+Problem 2.3 Guessing a closed form
+Use a change of variable to show that
+
+1 + x2 . (2.8)
+The second integral has a finite integration range, so it is easier than the first
+integral to evaluate numerically. Estimate the second integral using the trapezoid
+approximation and a computer or programmable calculator. Then guess a closed
+form for the first integral.
+2.2 Plane geometry: The area of an ellipse
+
+The second application of easy cases is from plane
+geometry: the area of an ellipse. This ellipse has
+semimajor axis a and semiminor axis b. For its area A
+consider the following candidates:
+(a) ab2 (b) a2 + b2 (c) a3
+/b (d) 2ab (e) piab.
+What are the merits or drawbacks of each candidate?
+The candidate A = ab2 has dimensions of L3, whereas an area must have
+dimensions of L2. Thus ab2 must be wrong.
+The candidate A = a2 + b2 has correct dimensions (as do the remaining
+candidates), so the next tests are the easy cases of the radii a and b. For a,
+the low extreme a = 0 produces an infinitesimally thin ellipse with zero
+area. However, when a = 0 the candidate A = a2 + b2 reduces to A = b2
+rather than to 0; so a2 + b2 fails the a = 0 test.
+The candidate A = a3/b correctly predicts zero area when a = 0. Because
+a = 0 was a useful easy case, and the axis labels a and b are almost
+interchangeable, its symmetric counterpart b = 0 should also be a useful
+easy case. It too produces an infinitesimally thin ellipse with zero area;
+alas, the candidate a3/b predicts an infinite area, so it fails the b = 0 test.
+Two candidates remain.
+The candidate A = 2ab shows promise. When a = 0 or b = 0, the
+actual and predicted areas are zero, so A = 2ab passes both easy-cases
+tests. Further testing requires the third easy case: a = b. Then the ellipse
+becomes a circle with radius a and area pia2. The candidate 2ab, however,
+reduces to A = 2a2, so it fails the a = b test.
+\end{document}
