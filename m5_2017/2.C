@@ -4,9 +4,9 @@ void main(void)
 {
 	int day, month, i;
 	printf("Day:");
-	scanf_s("%i", &day);
+	scanf("%i", &day);
 	printf("Month:");
-	scanf_s("%i", &month);
+	scanf("%i", &month);
 	if (day > 31 || day < 1 || month > 12 || month < 1)
 		printf("Wrong information\n");
 	else
