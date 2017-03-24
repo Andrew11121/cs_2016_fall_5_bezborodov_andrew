@@ -9,7 +9,7 @@ void array_read(double *a, int n)
 	for (i = 0; i < n; i++)
 	{
 		printf("A[%i]=", i);
-		scanf_s("%lf", &a[i]);
+		scanf("%lf", &a[i]);
 	}
 }
 
