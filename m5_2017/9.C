@@ -21,7 +21,7 @@ void main(void)
 	long int n;
 	int i;
 	printf("Input n: ");
-	scanf_s("%d", &n);
+	scanf("%d", &n);
 	for (i = 0; i <= n; i++)
 		printf("%d - %d\n", i, fib(i));
 }
