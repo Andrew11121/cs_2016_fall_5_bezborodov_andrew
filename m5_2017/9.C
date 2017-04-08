@@ -1,27 +1,19 @@
-#include "stdio.h"
+#include <stdio.h> 
 
-int fib(int n)
-{
-	if (n == 0)
-		return 0;
-	else if ((n == -1) || (n == 1))
-		return 1;
-	else
-	{
-		if (n > 0)
-			return fib(n - 1) + fib(n - 2);
-		else
-			return fib(n + 2) - fib(n + 1);
-	}
-}
+int fib(int x1) 
+{ 
+ if (x1==0||x1==1) 
+   return x1; 
+ else 
+   return fib(x1-1)+fib(x1-2);  
+} 
 
-void main(void)
-
-{
-	long int n;
-	int i;
-	printf("Input n: ");
-	scanf("%d", &n);
-	for (i = 0; i <= n; i++)
-		printf("%d - %d\n", i, fib(i));
+int main() 
+{ 
+ int x1, i; 
+ printf("Imput a number: "); 
+ scanf("%i", &x1); 
+ for (i=1;i<x1+1;++i)
+   printf("%i:%i\n", i, fib(i)); 
+ return 0; 
 }
