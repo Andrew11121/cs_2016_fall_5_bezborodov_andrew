@@ -1,53 +1,51 @@
 #include <stdio.h>
-#include <string.h>
 
-void StrCopy(char *t, char *s, int n)
+char StrCopy(char *s, char *t, int x)
 {
-	int i = 1;
-	while (i <= 2)
-	{
-		if ((*s++ = *t++) != 0)
-			i++;
-	}
+	int i = 0;
+	for (i = 0; i < x; i++)
+		s[i] = t[i];
 }
 
-void StrCat(char *t1, char *s1, int n)
+char StrCat(char *s, char *t, int x)
 {
-	int i = 1;
-	while (*s1 != 0)
-		s1++;
-	while (i <= 2)
+	int i = 0, a = 0;
+	for (i = 0; i < 50; i++)
 	{
-		if ((*s1++ = *t1++) != 0)
-			i++;
+		if (s[i] != '\0')
+			a++;
+		else
+			break;
 	}
+	for (i = 0; i < x; i++)
+		s[i + a] = t[i];
 }
 
-int StrCompare(char *t2, char *s2, int n)
+int StrCmp(char * s, char * t, int x)
 {
-	int i = 1;
-	while (*t2 == *s2 && *t2 != 0 && i <= n)
-	{
-		t2++, s2++;
-		i++;
-	}
-	return *t2 - *s2;
+	int i = 0;
+	for (i = 0; i < x; i++)
+		if (s[i] != t[i])
+			return 0;
+	return 1;
 }
 
-void main(void)
+int main()
 {
-	char t[] = "abcde";
-	char s[] = "aaaaa";
-	StrCopy(t, s, 3);
-	printf("%s %s\n", t, s);
-	printf("\n");
-
-	char t1[] = "abcde";
-	char s1[] = "aaaaa";
-	StrCat(t1, s1, 3);
-	printf("%s %s\n", t1, s1);
-
-	char t2[] = "abaaa";
-	char s2[] = "abaaa";
-	printf("%i\n", StrCompare(s2, t2, 2));
+	int x, n;
+	char t[100], s[100];
+	for (n = 0; n < 100; n++)
+		t[n] = '\0';
+	for (n = 0; n < 50; n++)
+		s[n] = '\0';
+	printf("Input your string: ");
+	gets(t);
+	printf("Input the number of symbols n: ");
+	scanf("%i", &x);
+	StrCopy(s, t, x);
+	printf("Your string with n symbols: %s\n", s);
+	StrCat(s, t, x);
+	printf("Previous string witn n symbols added to it's end: %s\n", s);
+	printf("Comparing our previos string with n symbols with the original string, 1 - if the strings are equal: %i\n", StrCmp(s, t, x));
+	return 0;
 }
