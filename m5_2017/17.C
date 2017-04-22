@@ -40,8 +40,11 @@ double array_max(double *a, int n)
 }
 void main(void)
 {
-	double mas[10];
-	array_read(mas, 10);
+	double mas[100];
+	int f;
+	printf("Input how many elemnts in array:");
+	scanf("%i", &f);
+	array_read(mas, f);
 	printf("Minimum value:%f, Maximum value is %f\n Residual between max and min is %f\n",
-		array_min(mas, 10), array_max(mas, 10), (array_max(mas, 10) - array_min(mas, 10)));
+		array_min(mas, f), array_max(mas, f), (array_max(mas, f) - array_min(mas, f)));
 }
