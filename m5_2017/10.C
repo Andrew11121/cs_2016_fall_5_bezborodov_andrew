@@ -3,8 +3,6 @@
 int rightrot(int a, int x)
 {
 	int i, j;
-
-	x = x % (sizeof(a) * 8);  
 	i = a >> x;   
 	j = a << (sizeof(a) * 8 - x); 
 
