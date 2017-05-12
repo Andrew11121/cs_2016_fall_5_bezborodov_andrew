@@ -39,7 +39,7 @@ int main()
 			counter += 2;
 			for (j = i + 2; j < fsize; j++)
 			{
-				if (buffer[j] == 0x0d && buffer[j + 1] == 0x0a)
+				if (buffer[j] == '\n')
 				{
 					f -= counter;
 					break;
