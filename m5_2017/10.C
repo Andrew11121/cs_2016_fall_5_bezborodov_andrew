@@ -1,33 +1,16 @@
 #include <stdio.h>
-#include <math.h>
-#define N 5
 
-void Rightrot(int *mas, int k)
+void Rightrot(int a, int x)
 {
-	int i, j, tmp;
-	for (i = 1; i <= k; i++)
-	{
-		tmp = mas[N - 1];
-		for (j = N - 1; j>0; j--)
-			mas[j] = mas[j - 1];
-		mas[0] = tmp;
-	}
+	printf("%d >> %d == %d\n", a, x, a >> x);
 }
 
-int main()
+void main(void)
 {
-	int a[N] = { 0 };
-	int i, k;
-	for (i = 0; i<N; i++)
-	{
-		printf("A[%d] = ", i);
-		scanf("%d", &a[i]);
-	}
-	printf("Input naskolko sdvigat K:");
-	scanf("%i", &k);
-	Rightrot(a, k);
-	for (i = 0; i<N; i++)
-		printf("%d ", a[i]);
-	printf("\n");
-	return 0;
+	int a, x;
+	printf("Input a number:");
+	scanf("%i", &a);
+	printf("Input naskok sdivgat vpravo:");
+	scanf("%i", &x);
+	Rightrot(a, x);
 }
