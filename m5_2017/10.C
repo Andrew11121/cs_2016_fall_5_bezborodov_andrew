@@ -8,7 +8,7 @@ int rightrot(int a, int x)
 	i = a >> x;   
 	j = a << (sizeof(a) * 8 - x); 
 
-	return t1 | t2;  
+	return i | j;  
 }
 
 void main(void)
