@@ -2,11 +2,11 @@
 
 int rightrot(int a, int x)
 {
-	int t1, t2;
+	int i, j;
 
 	x = x % (sizeof(a) * 8);  
-	t1 = a >> x;   
-	t2 = a << (sizeof(a) * 8 - x); 
+	i = a >> x;   
+	j = a << (sizeof(a) * 8 - x); 
 
 	return t1 | t2;  
 }
