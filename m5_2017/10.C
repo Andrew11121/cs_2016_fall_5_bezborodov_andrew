@@ -8,8 +8,7 @@ int rightrot(int a, int x)
 
 	return i | j;  
 }
-
-void main(void)
+int main()
 {
 	int a, x;
 	printf("Input a number:");
@@ -17,4 +16,5 @@ void main(void)
 	printf("Input naskok sdivgat vpravo:");
 	scanf("%i", &x);
 	printf("Res - %i\n", rightrot(a, x));
+	return 0;
 }
