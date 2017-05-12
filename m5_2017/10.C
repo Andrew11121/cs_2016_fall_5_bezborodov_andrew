@@ -15,8 +15,8 @@ void main(void)
 {
 	int a, x;
 	printf("Input a number:");
-	scanf_s("%i", &a);
+	scanf("%i", &a);
 	printf("Input naskok sdivgat vpravo:");
-	scanf_s("%i", &x);
+	scanf("%i", &x);
 	printf("Res - %i\n", rightrot(a, x));
 }
