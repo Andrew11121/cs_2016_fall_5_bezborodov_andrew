@@ -1,16 +1,22 @@
 #include <stdio.h>
 
-void Rightrot(int a, int x)
+int rightrot(int a, int x)
 {
-	printf("%d >> %d == %d\n", a, x, a >> x);
+	int t1, t2;
+
+	x = x % (sizeof(a) * 8);  
+	t1 = a >> x;   
+	t2 = a << (sizeof(a) * 8 - x); 
+
+	return t1 | t2;  
 }
 
 void main(void)
 {
 	int a, x;
 	printf("Input a number:");
-	scanf("%i", &a);
+	scanf_s("%i", &a);
 	printf("Input naskok sdivgat vpravo:");
-	scanf("%i", &x);
-	Rightrot(a, x);
+	scanf_s("%i", &x);
+	printf("Res - %i\n", rightrot(a, x));
 }
